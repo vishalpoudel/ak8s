@@ -7,32 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
-stages:
-- stage: build
-  jobs:
-  - job: first_job
-    steps:
-    - bash: echo this is first job from first stage
-
-- stage: dev
-  jobs:
-  - job: second_job
-    steps:
-    - bash: echo this is second job from second stage
-
-
-
-# steps:
-# - task: Ant@1
-#   inputs:
-#     workingDirectory: ''
-#     buildFile: 'build.xml'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.8'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/TEST-*.xml'
-
+steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
   
