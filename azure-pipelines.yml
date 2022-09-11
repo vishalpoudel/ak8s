@@ -1,20 +1,19 @@
-# Ant
-# Build your Java projects and run tests with Apache Ant.
-# Add steps that save build artifacts and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
-steps:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      echo 'Hello world'
-  
+stages:
+- stage: build
+  jobs:
+  - job: first-job
+    steps:
+    - bash: echo this is first job from first stage
+
+- stage: dev
+  jobs:
+  - job: second_job
+    steps:
+    - bash: echo this is second job from second stage
