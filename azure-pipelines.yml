@@ -8,7 +8,7 @@ pool:
 stages:
 - stage: build
   jobs:
-  - job: first-job
+  - job: first_job
     steps:
     - bash: echo this is first job from first stage
 
