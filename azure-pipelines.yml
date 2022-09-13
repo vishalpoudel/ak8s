@@ -11,9 +11,20 @@ stages:
   - job: first_job
     steps:
     - bash: echo this is first job from first stage
+  - job: check ant version
+    steps:
+    - bash: ant -version    
 
 - stage: dev
+  dependsOn: build
   jobs:
   - job: second_job
     steps:
     - bash: echo this is second job from second stage
+
+- stage: prod
+  dependsOn: build
+  jobs:
+  - job: third_job
+    steps:
+    - bash: echo this is third job from third stage
