@@ -15,13 +15,6 @@ stages:
   - job: check_ant_version
     steps:
     - bash: exit 1
-    
-- stage: build1
-  dependsOn: build
-  jobs:
-  - job: second_job
-    steps:
-    - bash: echo this is second job from second stage
 
 - stage: prod
   dependsOn: build
