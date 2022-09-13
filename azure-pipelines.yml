@@ -16,7 +16,7 @@ stages:
     steps:
     - bash: exit 1
     
- 
+- stage: build1
   dependsOn: build
   jobs:
   - job: second_job
