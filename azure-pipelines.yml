@@ -16,7 +16,7 @@ stages:
     - bash: ant -version    
 
 - stage: dev
-  dependsOn: build
+  dependsOn: prod
   jobs:
   - job: second_job
     steps:
