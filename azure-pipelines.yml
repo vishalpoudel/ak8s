@@ -13,7 +13,7 @@ stages:
     - bash: echo this is first job from first stage
   - job: check_ant_version
     steps:
-    - bash: ant --version    
+    - bash: ant -version    
 
 - stage: dev
   dependsOn: build
