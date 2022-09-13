@@ -14,6 +14,8 @@ stages:
   - job: check_ant_version
     steps:
     - bash: ant -version    
+    steps: nan aa
+    continueOnError: true
 
 - stage: dev
   dependsOn: build
