@@ -30,7 +30,10 @@ stages:
     - bash: echo this is third job from third stage
 
 - stage: prod1
-  dependsOn: prod,build,dev
+  dependsOn:
+   - build
+   - dev
+   - prod
   jobs:
   - job: forth_job
     steps:
