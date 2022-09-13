@@ -11,10 +11,9 @@ stages:
   - job: first_job
     steps:
     - bash: echo this is first job from first stage
-  - job: check_ant_version
+  - job: check ant_version
     steps:
     - bash: ant -version    
-    job: bab a
     continueOnError: true
 
 - stage: dev
