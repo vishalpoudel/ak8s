@@ -13,7 +13,7 @@ stages:
     - bash: rtrt
   - job: check_ant_version
     steps:
-    - bash: ant -version    
+    - bash: exit 1    
     continueOnError: true
 
 - stage: dev
