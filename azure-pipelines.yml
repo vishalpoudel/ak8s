@@ -11,10 +11,11 @@ stages:
   - job: first_job
     steps:
     - bash: rtrt
+    continueOnError: true
   - job: check_ant_version
     steps:
     - bash: exit 1
-      continueOnError: true
+    
  
   dependsOn: build
   jobs:
